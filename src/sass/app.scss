@@ -1,1 +1,140 @@
 @import "variables";
+
+html {
+  font-size: $font-size;
+  font-family: "Overpass", sans-serif;
+
+  body {
+
+    background-color: $very-dark-blue;
+    color: $light-grey;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    justify-items: center;
+    min-height: 100vh;
+    justify-content: center;
+
+    .container {
+      background-image: radial-gradient(circle at top center, $dark-blue, $darker-blue);
+      width: 400px;
+      border-radius: 1rem;
+
+      h1 {
+        color: $white;
+        font-size: 1.9rem;
+        font-weight: 700;
+      }
+
+      .box {
+        padding: 2.25rem;
+        display: flex;
+        flex-direction: column;
+      }
+
+      .survey {
+        //display: none;
+
+        .rates {
+          display: inline;
+        }
+
+        .circled {
+          background-color: $medium-blue;
+          padding: 1rem;
+          border-radius: 50%;
+          width: 1rem;
+          height: 1rem;
+          display: block;
+          text-align: center;
+
+
+        }
+
+        .radio-group {
+          display: inline-block;
+
+          input[type=radio] {
+            display: none;
+
+            &:checked + label {
+              background-color: $orange;
+              color: $white;
+            }
+          }
+
+          label {
+            &:hover {
+              background-color: $light-grey;
+              color: $white;
+            }
+          }
+        }
+
+        .radio-group + .radio-group {
+          margin-left: 1.5rem;
+        }
+
+        @media (max-width: $mobile-bp) {
+          .radio-group + .radio-group {
+            margin-left: 0.6rem;
+          }
+        }
+
+
+        input[type=submit] {
+          text-transform: uppercase;
+          font-weight: 400;
+          font-size: 1rem;
+          text-align: center;
+          width: 100%;
+          background-color: $orange;
+          color: $white;
+          border-radius: 25px;
+          padding: 0.75rem;
+          font-family: "Overpass", sans-serif;
+          border: none;
+          margin-top: 2rem;
+        }
+      }
+
+      .thank-you {
+        display: none;
+        align-items: center;
+        text-align: center;
+        align-content: center;
+        padding: 2.15rem;
+
+        .selected-rating {
+          background-color: $medium-blue;
+          color: $orange;
+          margin-top: 2rem;
+          margin-bottom: 1rem;
+          padding: 0.4rem 1.5rem;
+          border-radius: 25px;
+        }
+
+        h1 {
+          margin-bottom: 0.5rem;
+        }
+
+        p {
+          margin-top: 0.5rem;
+          padding: 0;
+        }
+      }
+
+    }
+
+    @media (max-width: $mobile-bp) {
+      .container {
+        width: 325px;
+
+        .box {
+          padding: 1.5rem;
+        }
+      }
+    }
+  }
+
+}

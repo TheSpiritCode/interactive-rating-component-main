@@ -7,7 +7,20 @@
   \***********************/
 /***/ (() => {
 
+(function () {
+  var ratingForm = document.getElementById('rating');
+  var slot = document.getElementById('slot');
+  var thankYouBox = document.getElementById('thank-you');
+  var surveyBox = document.getElementById('survey');
 
+  onsubmit = function onsubmit(event) {
+    event.preventDefault();
+    var selectedRating = ratingForm.querySelector('input:checked');
+    slot.innerText = selectedRating.value;
+    surveyBox.style.display = "none";
+    thankYouBox.style.display = "flex";
+  };
+})();
 
 /***/ }),
 
